@@ -48,6 +48,7 @@ local config = {
                         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
                         wrap = false, -- sets vim.opt.wrap
                         cmdheight = 1,
+                        autochdir = true,
                 },
                 g = {
                         mapleader = " ", -- sets vim.g.mapleader
@@ -208,7 +209,7 @@ local config = {
                         ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
                         ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
                         ["<leader>TT"] = { "<cmd>TransparentToggle<cr>", desc = "Transparent Toggle" },
-                        ["<leader>rt"] = { "<cmd>RnvimrToggle<cr>", desc = "Ranger Toggle" },
+                        ["<leader>TR"] = { "<cmd>RnvimrToggle<cr>", desc = "Ranger Toggle" },
                         -- quick save
                         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
                 },
@@ -258,6 +259,10 @@ local config = {
                                                 respect_gitignore = true,
                                         }
                                 end,
+                        },
+                        {
+                                "kevinhwang91/nvim-hlslens",
+                                require("hlslens").setup(),
                         },
                         -- Configuratin
 
@@ -350,8 +355,7 @@ local config = {
                                         -- third key is the key to bring up next level and its displayed
                                         -- group name in which-key top level menu
                                         ["b"] = { name = "Buffer" },
-                                        ["T"] = { name = "Transparency" },
-                                        ["r"] = { name = "File Manager" },
+                                        ["T"] = { name = "Tool" },
                                 },
                         },
                 },
@@ -361,6 +365,7 @@ local config = {
         -- augroups/autocommands and custom filetypes also this just pure lua so
         -- anything that doesn't fit in the normal config locations above can go here
         polish = function()
+                vim.on_key(nil, vim.api.nvim_get_namespaces()["auto_hlsearch"])
                 -- Set up custom filetypes
                 -- vim.filetype.add {
                 --   extension = {
@@ -376,4 +381,4 @@ local config = {
         end,
 }
 
-return config
+return config 
