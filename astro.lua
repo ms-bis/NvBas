@@ -227,7 +227,6 @@ local config = {
                         -- New
                         {
                                 "sitiom/nvim-numbertoggle",
-                                config = function() require("numbertoggle").setup() end,
                         },
                         {
                                 "xiyaowong/nvim-transparent",
@@ -262,7 +261,6 @@ local config = {
                         },
                         {
                                 "kevinhwang91/nvim-hlslens",
-                                require("hlslens").setup(),
                         },
                         -- Configuratin
 
