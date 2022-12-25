@@ -1,5 +1,5 @@
 # NvBas
-NvBas a set of configuration for AstroNvim and Lunarvim
+NvBas is a set of configuration for AstroNvim and Lunarvim
 
-<asd>
+<"asdasd">
 
