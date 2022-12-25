@@ -258,10 +258,7 @@ local config = {
                                                 respect_gitignore = true,
                                         }
                                 end,
-                        },
-                        {
-                                "kevinhwang91/nvim-hlslens",
-                        },
+                        },                                                
                         -- Configuratin
 
                         -- You can also add new plugins here as well:
