@@ -179,6 +179,9 @@ lvim.plugins = {
       "xiyaowong/nvim-transparent",
     },
     {
+      "Pocco81/HighStr.nvim",
+    },
+    {
       "Mofiqul/dracula.nvim",
     },
     {
