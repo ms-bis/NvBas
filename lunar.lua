@@ -186,7 +186,6 @@ lvim.plugins = {
     },
     {
       "sitiom/nvim-numbertoggle",
-      config = function() require("numbertoggle").setup() end,
     },
     {
       "kevinhwang91/rnvimr",
