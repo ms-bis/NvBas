@@ -229,6 +229,9 @@ local config = {
                                 "sitiom/nvim-numbertoggle",
                         },
                         {
+                                "Pocco81/HighStr.nvim",
+                        },
+                        {
                                 "xiyaowong/nvim-transparent",
                         },
                         {
