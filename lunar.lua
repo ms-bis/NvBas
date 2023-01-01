@@ -60,13 +60,10 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 --   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 -- }
 
-lvim.builtin.which_key.mappings["r"] = {
-  name = "File Manager",
-  t = { "<cmd>RnvimrToggle<cr>", "Ranger Toggle" },
-}
-
-lvim.builtin.which_key.mappings["t"] = {
-  name = "Transparency",
+lvim.builtin.which_key.mappings["u"] = {
+  name = "UI",
+  a = { "<cmd>AerialToggle<cr>", "Toggle Aerial" },
+  r = { "<cmd>RnvimrToggle<cr>", "Ranger Toggle" },
   t = { "<cmd>TransparentToggle<cr>", "Clear Background" },
 }
 
@@ -210,6 +207,19 @@ lvim.plugins = {
           hidden = true,
           respect_gitignore = true,
         }
+      end,
+    },
+    {
+      "stevearc/aerial.nvim",
+      config = function() 
+        require('aerial').setup({
+        -- optionally use on_attach to set keymaps when aerial has attached to a buffer
+          on_attach = function(bufnr)
+          -- Jump forwards/backwards with '{' and '}'
+            vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', {buffer = bufnr})
+            vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', {buffer = bufnr})
+          end
+        })
       end,
     },
 }
