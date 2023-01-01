@@ -1,9 +1,14 @@
 # NvBas
 NvBas is a set of configuration for AstroNvim and Lunarvim.
 
-To configure AstroNvim
+clone repo
 ```
 git clone https://github.com/msbiy/NvBas.git
+
+```
+
+To configure AstroNvim
+```
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 mkdir ~/.config/nvim/lua/user/
 cp -r NvBas/astro.lua ~/.config/nvim/lua/user/
