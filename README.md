@@ -7,6 +7,7 @@ git clone https://github.com/msbiy/NvBas.git
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 mkdir ~/.config/nvim/lua/user/
 cp -r NvBas/astro.lua ~/.config/nvim/lua/user/
+cp -r NvBas/astro_autocmd.lua ~/.config/nvim/lua/core/autocmds.lua 
 nvim  --headless -c 'autocmd User PackerComplete quitall'
 
 ```
