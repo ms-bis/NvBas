@@ -10,7 +10,7 @@ local config = {
         -- Configure AstroNvim updates
         updater = {
                 remote = "origin", -- remote to use
-                channel = "nightly", -- "stable" or "nightly"
+                channel = "stable", -- "stable" or "nightly"
                 version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
                 branch = "main", -- branch name (NIGHTLY ONLY)
                 commit = nil, -- commit hash (NIGHTLY ONLY)
@@ -228,14 +228,6 @@ local config = {
                         -- You can disable default plugins as follows:
                         -- ["goolord/alpha-nvim"] = { disable = true },
                         -- New
-                        {
-                                "rebelot/heirline.nvim",
-                                -- You can optionally lazy-load heirline on UiEnter
-                                -- to make sure all required plugins and colorschemes are loaded before setup
-                                -- event = "UiEnter",
-                                config = function() require("heirline").setup() end,
-                        },
-                        
                         {
                                 "sitiom/nvim-numbertoggle",
                         },
