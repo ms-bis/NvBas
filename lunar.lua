@@ -172,56 +172,70 @@ lvim.builtin.treesitter.highlight.enable = true
 
 -- Additional Plugins
 lvim.plugins = {
-    {
-      "xiyaowong/nvim-transparent",
-    },
-    {
-      "Pocco81/HighStr.nvim",
-    },
-    {
-      "Mofiqul/dracula.nvim",
-    },
-    {
-      "navarasu/onedark.nvim",
-    },
-    {
-      "sitiom/nvim-numbertoggle",
-    },
-    {
-      "kevinhwang91/rnvimr",
-    },
-    {
-      "nvim-treesitter/playground",
-    },
-    {
-      "ibhagwan/fzf-lua",
-      -- optional for icon support
-      requires = { "nvim-tree/nvim-web-devicons" },
-    },
-    {
-      "princejoogie/dir-telescope.nvim",
-      -- telescope.nvim is a required dependency
-      requires = { "nvim-telescope/telescope.nvim" },
-      config = function()
-        require("dir-telescope").setup {
-          hidden = true,
-          respect_gitignore = true,
-        }
-      end,
-    },
-    {
-      "stevearc/aerial.nvim",
-      config = function() 
-        require('aerial').setup({
+  {
+    "xiyaowong/nvim-transparent",
+  },
+  {
+    "Pocco81/HighStr.nvim",
+  },
+  {
+    "Mofiqul/dracula.nvim",
+  },
+  {
+    "navarasu/onedark.nvim",
+  },
+  {
+    "sitiom/nvim-numbertoggle",
+  },
+  {
+    "kevinhwang91/rnvimr",
+  },
+  {
+    "nvim-treesitter/playground",
+  },
+  {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    requires = { "nvim-tree/nvim-web-devicons" },
+  },
+  {
+    "princejoogie/dir-telescope.nvim",
+    -- telescope.nvim is a required dependency
+    requires = { "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("dir-telescope").setup({
+        hidden = true,
+        respect_gitignore = true,
+      })
+    end,
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
+        RGB = true, -- #RGB hex codes
+        RRGGBB = true, -- #RRGGBB hex codes
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      })
+    end,
+  },
+  {
+    "stevearc/aerial.nvim",
+    config = function()
+      require("aerial").setup({
         -- optionally use on_attach to set keymaps when aerial has attached to a buffer
-          on_attach = function(bufnr)
+        on_attach = function(bufnr)
           -- Jump forwards/backwards with '{' and '}'
-            vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', {buffer = bufnr})
-            vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', {buffer = bufnr})
-          end
-        })
-      end,
-    },
+          vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+          vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+        end,
+      })
+    end,
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
