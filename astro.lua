@@ -227,13 +227,22 @@ local config = {
             --   -- event = "UiEnter",
             --   config = function() require("heirline").setup() end,
             -- },
-
+            {
+                "ethanholz/nvim-lastplace",
+                require("nvim-lastplace").setup {
+                    lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+                    lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
+                    lastplace_open_folds = true,
+                },
+            },
             {
                 "sitiom/nvim-numbertoggle",
             },
             {
+                "lambdalisue/suda.vim",
+            },
+            {
                 "catppuccin/nvim",
-                as = "catppuccin",
             },
             {
                 "AlexvZyl/nordic.nvim",
@@ -389,13 +398,13 @@ local config = {
     -- anything that doesn't fit in the normal config locations above can go here
     polish = function()
             vim.on_key(nil, vim.api.nvim_get_namespaces()["auto_hlsearch"])
-            vim.cmd [[
-          augroup vimrc_autocmds
-          autocmd!
-          autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-          autocmd BufWritePost * let &line2 = line('.') | let &col2 = col('.')
-          augroup END
-        ]]
+            -- vim.cmd [[
+            --   augroup vimrc_autocmds
+            --   autocmd!
+            --   autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+            --   " autocmd BufWritePost * let &line2 = line('.') | let &col2 = col('.')
+            --   augroup END
+            -- ]]
             -- Set up custom filetypes
             -- vim.filetype.add {
             --   extension = {
